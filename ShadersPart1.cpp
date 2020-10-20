@@ -204,10 +204,13 @@ int main()
         //The uniform is currently empty, we haven't added any data to the uniform yet. We first need to find the index/location of the uniform attribute of the shader.
         //Once we have the index/location of the uniform, we can update its values. Instead of passing a single color to the fragment shader, we change the color over time.
         // update shader uniform
+        //First, we retrieve the running time in seconds via glfwGetTime(), then we vary the color with sin function.
+        //Then the query for the location of the 'ourColor' uniform using glGethUniformLocation
         float timeValue = glfwGetTime();
         float greenValue = sin(timeValue) / 2.0f + 0.5f;
         //We update a uniform value each frame before drawing the triangle.
         int vertexColorLocation = glGetUniformLocation(shaderProgram, "ourColor");
+        //We can set the uniform value with glUniform4f function. Note that finding the uniform location does not require you to use the shader program first, but updating a uniform does require you to use the program by glUseProgram, because it sets the uniform on the currently active shader
         glUniform4f(vertexColorLocation, 0.0f, greenValue, 0.0f, 1.0f);
 
         // render the triangle
