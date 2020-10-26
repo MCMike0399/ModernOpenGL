@@ -28,7 +28,7 @@ void main()
 {
     outputColor = mix(texture(texture0, texCoord), texture(texture1, texCoord), 0.2);
 }
-*?
+*/
 //The final output color is now the combination of two textures lookups, GLSL built mix function takes two values as input and linearly interpolates between them based on the third argument.
 //if the third value is 0.0 it returns the first input, if its 1.0 it returns the second input value. A 0.2 value will return 80% of the first input color and 20% of the second input color, resulting in a mixture of both our textures.
 int main()
