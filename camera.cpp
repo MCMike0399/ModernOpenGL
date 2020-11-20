@@ -133,18 +133,7 @@ When scrolling, the yoffset value tells us the amount we scrolled vertically. Wh
 We now have to upload the perspective projection matrix to the GPU each frame, but this time with the fov variable as its field of view: projection = glm::perspective(glm::radians(fov), 800.0f / 600.0f, 0.1f, 100.0f);  
 glfwSetScrollCallback(window, scroll_callback);
 */
-#define STB_IMAGE_IMPLEMENTATION    
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-#include <stb_image.h>
 
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
-
-#include <learnopengl/shader_m.h>
-
-#include <iostream>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void mouse_callback(GLFWwindow* window, double xpos, double ypos);
